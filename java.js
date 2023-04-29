@@ -1,8 +1,10 @@
-firstNum = 1;
+let firstNum = 0;
 
-secondNum = 1;
+let secondNum = 0;
 
-operator = '+';
+let operator = "";
+
+let displayValue = "";
 
 function add(a, b) {
 
@@ -55,3 +57,21 @@ function operate(firstNum, secondNum, operator){
     }
 
 }
+
+const display = document.querySelector('p');
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+
+        displayValue += button.id;
+
+        display.textContent = displayValue;
+
+    });
+
+});
+
+const simbol = document.querySelector('')
