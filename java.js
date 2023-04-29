@@ -72,11 +72,43 @@ simbol.forEach((button) => {
 
     button.addEventListener('click', () => {
 
+        if(operator == ""){
+
+            operator = button.id;
+
+            display.textContent = "";
+
+        }else if(displayValue == ""){
+
+            firstNum = Number(firstNum);
+
+            secondNum = firstNum;
+
+            display.textContent = operate();
+
+            secondNum = 0;
+        
+            operator = "";
+
+        }else {
+
+            secondNum = displayValue;
+
+            displayValue = "";
+        
+            firstNum = Number(firstNum);
+        
+            secondNum = Number(secondNum);
+        
+            display.textContent = operate();
+        
+            secondNum = 0;
+        
+            operator = ""; 
+
+        }
+
         firstNum += displayValue;
-
-        operator = button.id;
-
-        display.textContent = "";
 
         displayValue = "";
 
