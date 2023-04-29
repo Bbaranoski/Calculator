@@ -8,25 +8,25 @@ let displayValue = "";
 
 function add(a, b) {
 
-    return a + b;
+    return firstNum = a + b;
 
 }
 
 function subtract(a, b){
 
-    return a - b;
+    return firstNum = a - b;
 
 }
 
 function multiply(a, b){
 
-    return a * b;
+    return firstNum = a * b;
 
 }
 
 function divide(a, b){
 
-    return a / b;
+    return firstNum = a / b;
 
 }
 
@@ -64,17 +64,19 @@ const buttons = document.querySelectorAll('.container > button');
 
 const simbol = document.querySelectorAll('.test');
 
-const equal = document.querySelector ('.equal');
+const equal = document.querySelector('.equal');
+
+const clear = document.querySelector('#clear');
 
 simbol.forEach((button) => {
 
     button.addEventListener('click', () => {
 
-        firstNum = displayValue;
+        firstNum += displayValue;
 
         operator = button.id;
 
-        display.textContent += button.id;
+        display.textContent = "";
 
         displayValue = "";
 
@@ -98,12 +100,30 @@ equal.addEventListener('click', () => {
 
     secondNum = displayValue;
 
-    Number(firstNum);
+    displayValue = "";
 
-    Number(secondNum);
+    firstNum = Number(firstNum);
 
-    operate();
+    secondNum = Number(secondNum);
 
     display.textContent = operate();
+
+    secondNum = 0;
+
+    operator = "";
+
+})
+
+clear.addEventListener('click', () => {
+
+    display.textContent = "";
+
+    displayValue = "";
+
+    firstNum = 0;
+
+    secondNum = 0;
+
+    operator = "";
 
 })
