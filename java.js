@@ -30,7 +30,7 @@ function divide(a, b){
 
 }
 
-function operate(firstNum, secondNum, operator){
+function operate(){
 
     switch(operator){
 
@@ -60,18 +60,50 @@ function operate(firstNum, secondNum, operator){
 
 const display = document.querySelector('p');
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.container > button');
 
-buttons.forEach((button) => {
+const simbol = document.querySelectorAll('.test');
+
+const equal = document.querySelector ('.equal');
+
+simbol.forEach((button) => {
 
     button.addEventListener('click', () => {
 
-        displayValue += button.id;
+        firstNum = displayValue;
 
-        display.textContent = displayValue;
+        operator = button.id;
+
+        display.textContent += button.id;
+
+        displayValue = "";
 
     });
 
 });
 
-const simbol = document.querySelector('')
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+
+        display.textContent += button.id;
+
+        displayValue += button.id;
+
+    });
+
+});
+
+equal.addEventListener('click', () => {
+
+    secondNum = displayValue;
+
+    Number(firstNum);
+
+    Number(secondNum);
+
+    operate();
+
+    display.textContent = operate();
+
+})
