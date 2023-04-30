@@ -120,9 +120,13 @@ buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
 
-        display.textContent += button.id;
+        if(button.id != "="){
+            
+            display.textContent += button.id;
 
-        displayValue += button.id;
+            displayValue += button.id;
+
+        }
 
     });
 
