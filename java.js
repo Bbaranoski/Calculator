@@ -8,25 +8,65 @@ let displayValue = "";
 
 function add(a, b) {
 
-    return firstNum = a + b;
+    firstNum = a + b;
+
+    if(firstNum < 10000000000000){
+
+        return firstNum;
+
+    }else{
+        
+        return NaN
+    
+    }
 
 }
 
 function subtract(a, b){
 
-    return firstNum = a - b;
+    firstNum = a - b;
+
+    if(firstNum < 10000000000000){
+
+        return firstNum;
+
+    }else{
+        
+        return NaN
+    
+    }
 
 }
 
 function multiply(a, b){
 
-    return firstNum = a * b;
+    firstNum = a * b;
+
+    if(firstNum < 10000000000000){
+
+        return firstNum;
+
+    }else{
+        
+        return NaN
+    
+    }
 
 }
 
 function divide(a, b){
 
-    return firstNum = a / b;
+    firstNum = a / b;
+
+    if(firstNum < 10000000000000){
+
+        return firstNum;
+
+    }else{
+        
+        return NaN
+    
+    }
 
 }
 
@@ -120,7 +160,7 @@ buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
 
-        if(button.id != "="){
+        if(button.id != "=" && displayValue < 10000000000000000){
             
             display.textContent += button.id;
 
